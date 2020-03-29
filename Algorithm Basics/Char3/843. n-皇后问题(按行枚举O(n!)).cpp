@@ -8,7 +8,7 @@ int n;
 char g[N][N];
 bool col[N], dg[N], udg[N];
 
-void bfs(int u)
+void dfs(int u)
 {
     if(u == n)
     {
@@ -22,7 +22,7 @@ void bfs(int u)
         if(!col[i] && !dg[u + i] && !udg[N - u + i]){
             g[u][i] = 'Q';
             col[i] = dg[u + i] = udg[N - u + i] = true;
-            bfs(u+1);
+            dfs(u+1);
             col[i] = dg[u + i] = udg[N - u + i] = false;
             g[u][i] = '.';
         }
@@ -35,6 +35,6 @@ int main()
     for(int i = 0; i < n; i++)
         for(int j = 0; j < n; j++)
             g[i][j] = '.';
-    bfs(0);
+    dfs(0);
     return 0;
 }

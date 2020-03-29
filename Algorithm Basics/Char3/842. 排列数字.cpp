@@ -8,7 +8,7 @@ int n;
 int path[N];
 bool st[N];
 
-void bfs(int u)
+void dfs(int u)
 {
     if(u == n)
     {
@@ -22,7 +22,7 @@ void bfs(int u)
         if(!st[i]){
             path[u] = i;
             st[i] = true;
-            bfs(u+1);
+            dfs(u+1);
             st[i] = false;
         }
     }
@@ -31,6 +31,6 @@ void bfs(int u)
 int main()
 {
     cin >> n;
-    bfs(0);
+    dfs(0);
     return 0;
 }
