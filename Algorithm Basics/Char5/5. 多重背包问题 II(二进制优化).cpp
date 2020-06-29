@@ -10,7 +10,7 @@ int main()
 {
     int n, m;
     cin >> n >> m;
-    
+
     int cnt = 0;
     for(int i = 1; i <= n; i++)
     {
@@ -32,9 +32,9 @@ int main()
             w[cnt] = b*s;
         }
     }
-    
+
     n = cnt;
-    
+
     for(int i = 1; i <= n; i++)
         for(int j = m; j >= v[i]; j--)
         {
